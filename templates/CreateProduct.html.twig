@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+
+    {% if title %}
+
+        <h3>Le produit "{{ title }}" a bien été créé ! </h3>
+
+    {% endif %}
+
+    <h1>Créer un produit</h1>
+
+    <form method="post">
+
+        <label>Titre
+            <input type="text" name="title"/>
+        </label>
+
+
+        <label>Description
+            <textarea name="description"></textarea>
+        </label>
+
+        <label>Prix
+            <input type="text" name="price">
+        </label>
+
+        <label>Prix promotion (optionel)
+            <input type="text" name="price_promo">
+        </label>
+
+        <label>Lien de l'image du produit
+            <input type="text" name="link_img">
+        </label>
+
+        <button type="submit">Créer</button>
+
+    </form>
+
+{% endblock %}

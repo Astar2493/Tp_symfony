@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+
+    <h1>Liste des Produits</h1>
+
+
+    {% for product in products %}
+        <div class="product-item">
+            <h2>{{ product.title }}</h2>
+            {% if product.pricePromo %}
+                <p>{{ product.price }} €</p>
+                <h3>Promotion {{ product.pricePromo }} €</h3>
+            {% else %}
+                <p>{{ product.price }} €</p>
+            {% endif %}
+            <img src="{{ product.linkImg }}" alt="">
+            <a href="{{ path('single_product', {'id' : product.id }) }}">Voir le produit complet</a><br>
+            <a href="{{ path('delete_product', {'id' : product.id }) }}">supprimer le produit</a><br>
+            <a href="{{ path('update_product', {'id' : product.id }) }}">modifier le produit</a>
+        </div>
+
+
+    {% endfor %}
+{% endblock main %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+
+    <h1>Modifier un produit</h1>
+
+    <form method="post">
+
+        <label>Titre
+            <input type="text" name="title" value="{{ product.title }}"/>
+        </label>
+
+        <label>Description
+            <input type="text" name="description" value="{{ product.description }}"/>
+        </label>
+
+        <label>Price
+            <input type="text" name="price" value="{{ product.price }}"/>
+        </label>
+
+        <label>Price Promo
+            <input type="text" name="price_promo" value="{{ product.pricePromo }}"/>
+        </label>
+
+        <label>Lien de l'image
+            <input type="text" name="link_img" value="{{ product.linkImg }}"/>
+        </label>
+
+        <button type="submit">Modifier</button>
+
+    </form>
+
+{% endblock %}
+
+{% block metatitle %}
+
+{% endblock %}
